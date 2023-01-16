@@ -15,6 +15,7 @@
                         <tr>
                             <th scope="col">Titolo</th>
                             <th scope="col">Data di creazione</th>
+                            <th scope="col">Categoria</th>
                             <th scope="col">Azioni</th>
                         </tr>
                     </thead>
@@ -23,6 +24,7 @@
                             <tr>
                                 <th scope="row">{{ $project->title }}</th>
                                 <td>{{ $project->created_at }}</td>
+                                <td>{{ $project->type?->name ? $project->type->name : 'no category' }}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('admin.projects.show', $project->slug) }}">
                                         <i class="fa-solid fa-eye"></i>
